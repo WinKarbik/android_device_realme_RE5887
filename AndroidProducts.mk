@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_RE5887.mk
+    $(LOCAL_DIR)/twrp_RE5887.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_RE5887-user \
-    omni_RE5887-userdebug \
-    omni_RE5887-eng
+    twrp_RE5887-user \
+    twrp_RE5887-userdebug \
+    twrp_RE5887-eng
