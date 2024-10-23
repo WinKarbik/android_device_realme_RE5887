@@ -22,7 +22,6 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor \
     dtbo \
     system_ext
-BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -97,10 +96,12 @@ BOARD_REALME_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 TARGET_BOARD_PLATFORM := ums9230
 
 # Recovery
+BOARD_ROOT_EXTRA_FOLDERS := metadata my_preload
+BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_ROOT_EXTRA_FOLDERS := metadata my_preload
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
