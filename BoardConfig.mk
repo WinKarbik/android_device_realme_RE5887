@@ -115,11 +115,17 @@ PLATFORM_VERSION := 16.1.0
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
+TW_NO_FASTBOOT_BOOT := true
+TW_HAS_MTP := true
+TW_MTP_DEVICE := /dev/mtp_usb
+TW_INCLUDE_FASTBOOTD := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
