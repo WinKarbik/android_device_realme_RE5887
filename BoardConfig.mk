@@ -126,6 +126,8 @@ TW_INCLUDE_FASTBOOTD := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
+TARGET_SCREEN_HEIGHT := 1600
+TARGET_SCREEN_WIDTH := 720
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
