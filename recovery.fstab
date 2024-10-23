@@ -1,38 +1,45 @@
-/spl                 emmc     /dev/block/mmcblk0boot0              flags=display=spl;slotselect
-/spl_bk              emmc     /dev/block/mmcblk0boot1              flags=display=spl_bk
-/uboot               emmc     /dev/block/by-name/uboot             flags=display=uboot;slotselect
-/sml                 emmc     /dev/block/by-name/sml               flags=display=sml;slotselect
-/tos                 emmc     /dev/block/by-name/trustos           flags=display=tos;slotselect
-/teecfg              emmc     /dev/block/by-name/teecfg            flags=display=teecfg;slotselect
-/vbmeta              emmc     /dev/block/by-name/vbmeta            flags=display=vbmeta;slotselect
-/vbmeta_system       emmc     /dev/block/by-name/vbmeta_system     flags=display=vbmeta_system;slotselect
-/vbmeta_vendor       emmc     /dev/block/by-name/vbmeta_vendor     flags=display=vbmeta_vendor;slotselect
-/dtbo                emmc     /dev/block/by-name/dtbo              flags=display=dtbo;slotselect
-/ltedsp              emmc     /dev/block/by-name/l_ldsp            flags=display=ltedsp;slotselect
-/ltegdsp             emmc     /dev/block/by-name/l_gdsp            flags=display=ltegdsp;slotselect
-/lteagdsp            emmc     /dev/block/by-name/l_agdsp           flags=display=lteagdsp;slotselect
-/ltecdsp             emmc     /dev/block/by-name/l_cdsp            flags=display=ltecdsp;slotselect
-/ltemodem            emmc     /dev/block/by-name/l_modem           flags=display=ltemodem;slotselect
-/ltefixnv1           emmc     /dev/block/by-name/l_fixnv1          flags=display=ltefixnv1
-/ltefixnv2           emmc     /dev/block/by-name/l_fixnv2          flags=display=ltefixnv2
-/ltedeltanv          emmc     /dev/block/by-name/l_deltanv         flags=display=ltedeltanv;slotselect
-/lteruntimenv1       emmc     /dev/block/by-name/l_runtimenv1      flags=display=lteruntimenv1
-/lteruntimenv2       emmc     /dev/block/by-name/l_runtimenv2      flags=display=lteruntimenv2
-/wcnmodem            emmc     /dev/block/by-name/wcnmodem          flags=display=wcnmodem;slotselect
-/gnssmodem           emmc     /dev/block/by-name/gnssmodem         flags=display=gnssmodem;slotselect
-/pmsys               emmc     /dev/block/by-name/pm_sys            flags=display=pmsys;slotselect
-/misc                emmc     /dev/block/by-name/misc              flags=display=misc
-/boot                emmc     /dev/block/by-name/boot              flags=display=boot;slotselect
-/persist             emmc     /dev/block/by-name/persist           flags=display=persist
-/logo                emmc     /dev/block/by-name/logo              flags=display=logo
-/fbootlogo           emmc     /dev/block/by-name/fbootlogo         flags=display=fbootlogo
-/system              ext4     system                               flags=display=system;logical;slotselect
-/system_ext          ext4     system_ext                           flags=display=system_ext;logical;slotselect
-/vendor              ext4     vendor                               flags=display=vendor;logical;slotselect
-/product             ext4     product                              flags=display=product;logical;slotselect
-/metadata            ext4     /dev/block/by-name/metadata          flags=display=metadata
-/socko               ext4     /dev/block/by-name/socko             flags=display=socko;slotselect
-/odmko               ext4     /dev/block/by-name/odmko             flags=display=odmko;slotselect
-/data                f2fs     /dev/block/by-name/userdata          flags=display=data
-/mnt/vendor          ext4     /dev/block/by-name/prodnv            flags=display=vendor
-/storage/sdcard0     vfat     /dev/block/mmcblk1p1                 flags=display=sdcard0
+/dev/block/mmcblk0boot0                                                        /spl                emmc    defaults    slotselect
+/dev/block/mmcblk0boot1                                                        /spl_bk             emmc    defaults    defaults
+/dev/block/by-name/uboot                 /uboot              emmc    defaults    slotselect
+/dev/block/by-name/sml                   /sml                emmc    defaults    slotselect
+/dev/block/by-name/trustos               /tos                emmc    defaults    slotselect
+/dev/block/by-name/teecfg                /teecfg             emmc    defaults    slotselect
+/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults    slotselect
+/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults    slotselect
+/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults    slotselect
+/dev/block/by-name/dtbo                  /dtbo               emmc    defaults    slotselect
+
+/dev/block/by-name/l_ldsp                /ltedsp             emmc    defaults    slotselect
+/dev/block/by-name/l_gdsp                /ltegdsp            emmc    defaults    slotselect
+/dev/block/by-name/l_agdsp               /lteagdsp            emmc    defaults   slotselect
+/dev/block/by-name/l_cdsp                /ltecdsp            emmc    defaults    slotselect
+/dev/block/by-name/l_modem               /ltemodem           emmc    defaults    slotselect
+/dev/block/by-name/l_fixnv1              /ltefixnv1          emmc    defaults    defaults
+/dev/block/by-name/l_fixnv2              /ltefixnv2          emmc    defaults    defaults
+/dev/block/by-name/l_deltanv             /ltedeltanv         emmc    defaults    slotselect
+/dev/block/by-name/l_runtimenv1          /lteruntimenv1      emmc    defaults    defaults
+/dev/block/by-name/l_runtimenv2          /lteruntimenv2      emmc    defaults    defaults
+/dev/block/by-name/wcnmodem              /wcnmodem           emmc    defaults    slotselect
+/dev/block/by-name/gnssmodem             /gnssmodem          emmc    defaults    slotselect
+/dev/block/by-name/pm_sys                /pmsys              emmc    defaults    slotselect
+
+/dev/block/by-name/misc                  /misc               emmc    defaults    defaults
+/dev/block/by-name/boot                  /boot               emmc    defaults    slotselect
+/dev/block/by-name/persist               /persist            emmc    defaults    defaults
+/dev/block/by-name/logo                  /logo               emmc    defaults    defaults
+/dev/block/by-name/fbootlogo             /fbootlogo          emmc    defaults    defaults
+
+system /system ext4 ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
+system_ext /system_ext ext4 ro,barrier=1 wait,avb=vbmeta_system_ext,logical,first_stage_mount,slotselect
+vendor /vendor ext4 ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
+product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slotselect
+/dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
+
+/dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+/dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+
+/dev/block/by-name/userdata              /data               f2fs    noatime,nosuid,nodev,discard,inline_xattr,inline_data wait,check,reservedsize=128M,formattable
+/dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
+
+/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults    defaults
+
