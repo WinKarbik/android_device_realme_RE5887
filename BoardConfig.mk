@@ -89,6 +89,9 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_INCLUDE_DTB_IN_BOOTIMG := 
 endif
 
+# LUN file path
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -135,6 +138,9 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
+TW_NO_LEGACY_PROPS := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_RESETPROP := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
