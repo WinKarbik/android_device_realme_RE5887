@@ -1,0 +1,11 @@
+on fs
+    start vendor.unisoc.keymaster-4-1
+
+service vendor.unisoc.keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
