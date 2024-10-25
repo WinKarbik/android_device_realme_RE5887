@@ -23,6 +23,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery \
     android.hardware.boot@1.0-service
 
+#PRODUCT_PACKAGES += \
+#    android.hardware.boot@1.1-impl.recovery
+
 PRODUCT_PACKAGES += \
     bootctrl.ums9230 \
     bootctrl.ums9230.recovery \
