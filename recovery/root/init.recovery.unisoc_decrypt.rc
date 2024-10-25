@@ -6,9 +6,11 @@ on late-fs
 
 service wait_for_keymaster /system/bin/wait_for_keymaster
     user root
-    group root system
-    priority -20
-    ioprio rt 0
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
 
 service vendor.unisoc.keymaster-4-1 /system/bin/hw/android.hardware.keymaster@4.1-unisoc.service
     user root
