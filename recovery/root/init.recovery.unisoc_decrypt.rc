@@ -1,9 +1,5 @@
-on fs
-    start vendor.gatekeeper-1-0
-    start vendor.unisoc.keymaster-4-1
-
-on late-fs
-    exec_start wait_for_keymaster
+import /vendor/etc/init/android.hardware.gatekeeper@1.0-service.trusty.rc
+import /vendor/etc/init/android.hardware.keymaster@4.1-unisoc.service.rc
 
 service wait_for_keymaster /system/bin/wait_for_keymaster
     user root
@@ -13,19 +9,10 @@ service wait_for_keymaster /system/bin/wait_for_keymaster
     oneshot
     seclabel u:r:recovery:s0
 
-service vendor.gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trusty
-    user root
-    group root
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+on property:hwservicemanager.ready=true
+    start vendor.gatekeeper-1-0
+    start vendor.unisoc.keymaster-4-1
 
-service vendor.unisoc.keymaster-4-1 /system/bin/android.hardware.keymaster@4.1-unisoc.service
-    user root
-    group root
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+on late-fs
+    exec_start wait_for_keymaster
 

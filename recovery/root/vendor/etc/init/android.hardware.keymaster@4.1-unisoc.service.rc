@@ -1,0 +1,7 @@
+service vendor.unisoc.keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-unisoc.service
+    interface android.hardware.keymaster@4.1::IKeymasterDevice default
+    interface android.hardware.keymaster@4.0::IKeymasterDevice default
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
