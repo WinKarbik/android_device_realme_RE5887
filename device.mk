@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl \
     android.hardware.fastboot@1.0-impl.recovery
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    wait_for_keymaster
+
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
