@@ -12,6 +12,7 @@ service wait_for_keymaster /system/bin/wait_for_keymaster
 on property:hwservicemanager.ready=true
     start vendor.gatekeeper-1-0
     start vendor.unisoc.keymaster-4-1
+    setprop vendor.sprd.storageproxyd.enabled 1
 
 on late-fs
     exec_start wait_for_keymaster
