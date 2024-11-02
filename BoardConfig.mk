@@ -6,7 +6,7 @@
 #
 
 DEVICE_PATH := device/realme/RE5887
-
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
