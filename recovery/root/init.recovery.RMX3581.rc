@@ -2,17 +2,8 @@
 import /init.recovery.common.rc
 import /init.recovery.unisoc_decrypt.rc
 
-#service name must be < 16
-service vendor.rpmbproxy /vendor/bin/sprdstorageproxyd -f rpmb -d /dev/trusty-ipc-dev0 -p /data/vendor/sprd_ss -r /dev/mmcblk0rpmb
-    class core
-    group system
-    oneshot
-    seclabel u:r:tee:s0
-
-service vendor.nsproxy /vendor/bin/sprdstorageproxyd -f ns -d /dev/trusty-ipc-dev0 -p /data/vendor/sprd_ss -r /dev/mmcblk0rpmb
-    class late_start
-    group system
-    seclabel u:r:tee:s0
+on init
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
 
 on boot
     start boot-hal-1-1
@@ -20,8 +11,3 @@ on boot
 
 on post-fs-data
     mkdir /data/vendor/sprd_ss 0770 system system
-
-on property:vendor.sprd.storageproxyd.enabled=1
-    mkdir /data/vendor/sprd_ss 0770 system system
-    start vendor.rpmbproxy
-    start vendor.nsproxy
