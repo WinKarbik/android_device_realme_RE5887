@@ -20,17 +20,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from RE5887 device
-$(call inherit-product, device/realme/RE5887/device.mk)
+$(call inherit-product, device/realme/RE588E/device.mk)
 
-PRODUCT_DEVICE := RE5887
-PRODUCT_NAME := twrp_RE5887
+PRODUCT_DEVICE := RE588E
+PRODUCT_NAME := twrp_RE588E
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := RMX3581
+PRODUCT_MODEL := RMX3506
 PRODUCT_MANUFACTURER := realme
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="RMX3581_Natv-user 11 RP1A.201005.001 8442 release-keys"
+    PRIVATE_BUILD_DESC="RMX3506_Natv-user 11 RP1A.201005.001 52224 release-keys"
 
-BUILD_FINGERPRINT := realme/RMX3581/RE5887:11/RP1A.201005.001/1677147083000:user/release-keys
+BUILD_FINGERPRINT := realme/RMX3506/RE588E:11/RP1A.201005.001/1672072602000:user/release-keys
