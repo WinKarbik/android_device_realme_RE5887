@@ -72,6 +72,12 @@ service gpsd /vendor/bin/gpsd
     user system
     group gps system shell inet net_raw wifi
 
+service vendor.sprd.hardware.vibrator-service /vendor/bin/hw/vendor.sprd.hardware.vibrator-service
+    class early_hal
+    user system
+    group system
+    seclabel u:r:recovery:s0
+
 on init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
     write /sys/fs/selinux/checkreqprot 0

@@ -8,6 +8,7 @@ on init
 on boot
     start boot-hal-1-1
     start health-hal-2-1
+    start vendor.sprd.hardware.vibrator-service
 
 on post-fs-data
     mkdir /data/vendor/sprd_ss 0770 system system
