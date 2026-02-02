@@ -6,3 +6,5 @@ vendor /vendor ext4 ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_moun
 system_ext /system_ext ext4 ro,barrier=1 wait,avb=vbmeta_system_ext,logical,first_stage_mount,slotselect
 product /product ext4 ro,barrier=1 wait,avb=vbmeta_product,logical,first_stage_mount,slotselect
 /dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
+/devices/platform/soc/soc:aon/64900000.usb/musb-hdrc.*.auto/usb*      auto         vfat defaults voldmanaged=usbdisk:auto
+/devices/platform/soc/soc:ap-apb/201a0000.sdio/mmc_host/mmc1/mmc1:*/block/mmcblk1      auto         vfat defaults voldmanaged=sdcard0:auto,noemulatedsd,encryptable=footer
