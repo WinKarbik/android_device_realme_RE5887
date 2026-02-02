@@ -51,7 +51,5 @@ on property:ro.crypto.state=unencrypted
 on property:twrp.decrypt.done=true
     stop vendor.unisoc.keymaster-4-1
     stop vendor.gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
 
 
